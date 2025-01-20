@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://s3-alpha-sig.figma.com/img/57fb/eb5e/3ed9d760d2d67277495a682fce629500?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MFhsXVsw6iJS~XgBLVLklvY2UaQT8iXqDB7d0l1fhpXCo6Af~MtzkcsNloXalp6MpttKOOHeIsurmxGqhhgBjdJEKqLCVSfYzGyC79WwmIgPgm9lwcO4pUONVV1OsqIR3xLDvtbT8WzJvQZppTcDM-dhv1oVSuz4F9zdheJz8q7qlAnpnwqAaihX3yOPZR-Cyc3vPtXoLJp58dG1KyA2m7sHarggSOpnZZcWXEbxdJCzygm15WGY7WA29YXWDe~kDKaDIbI22oa77Mn5q3MhjkqABeShiT8DsmBxh8Gj76m8cRb6amA34GQalvKXo2svtu9b8ikQ4Tvqz4sdds28XA__'); /* Ganti dengan URL gambar latar Anda */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(96, 64, 32, 0.9); /* Warna coklat dengan transparansi */
+    border-radius: 15px;
+    padding: 30px 40px;
+    text-align: center;
+    color: #f5e3b4; /* Warna teks kuning muda */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+    margin: 10px 0 30px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.container p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.container a {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #f5e3b4;
+    color: #f5e3b4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.container a:hover {
+    background-color: #f5e3b4;
+    color: #603f20; /* Warna coklat gelap */
+}
+.container:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* Styling untuk modal */
+.modal-content {
+    background-color: rgba(245, 227, 180, 0.9); /* Warna latar belakang transparan */
+    color: #603f20; /* Warna teks */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+    max-width: 400px; /* Lebar maksimal modal */
+    margin: 15% auto; /* Tengah modal */
+    text-align: center;
+}
+
+/* Header modal */
+.modal-header {
+    border-bottom: 1px solid #e0cfa5; /* Warna garis pemisah */
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+/* Tombol tutup di header */
+.btn-close {
+    background-color: transparent; /* Transparan untuk tampilan minimalis */
+    border: none; /* Hilangkan border */
+    font-size: 24px; /* Ukuran lebih besar */
+    color: #603f20; /* Warna tombol */
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn-close:hover {
+    color: #4e3319; /* Warna saat hover */
+}
+
+/* Isi modal */
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body ul {
+    list-style-type: none; /* Menghapus bullet point */
+    padding: 0;
+    margin: 0;
+}
+
+.modal-body ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Footer modal */
+.modal-footer {
+    border-top: 1px solid #e0cfa5; /* Warna garis pemisah */
+}
+
+/* Tombol di footer */
+.modal-footer .btn-secondary {
+    background-color: #603f20; /* Warna tombol */
+    color: #f5e3b4; /* Warna teks tombol */
+    border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #4e3319; /* Warna tombol saat hover */
+    color: #f5e3b4;
+}

@@ -1,0 +1,115 @@
+.custom-navbar {
+    background-color:  rgb(96, 64, 32); 
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.custom-footer {
+    background-color:  rgb(96, 64, 32); 
+    position: fixed;
+    bottom: 0;
+    height: 25px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.button-logout {
+    display: inline-block;
+    background-color: red;
+    border: 2px solid #f5e3b4;
+    color: #f5e3b4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.button-logout:hover {
+    background-color: #f5e3b4;
+    color: #603f20; /* Warna coklat gelap */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55px;
+    background: #f5e3b4;
+    transition: all 0.3s;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar.collapsed {
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .sidebar-header {
+    text-align: center;
+    padding: 16px;
+    background: #603f20;
+    color: white;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 15px;
+    text-align: right;
+  }
+  
+  .sidebar ul li a {
+    color: #603f20;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar ul li a .icon {
+    margin-right: 30px;
+  }
+  
+  .sidebar ul li:hover {
+    background:   #e1ce63;
+    color: white;
+  }
+  
+  .sidebar ul li a:hover {
+    color: white;
+  }
+  
+  .sidebar ul li.active {
+    background:  #e1ce63;
+    color: white;
+  }
+  
+  .content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    transition: all 0.3s;
+  }
+  
+  .content.collapsed {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+  
+  .toggle-btn {
+    color: white;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+  
+  .toggle-btn.collapsed {
+    left: 90px;
+  }

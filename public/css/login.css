@@ -1,0 +1,232 @@
+.login-child {
+    top: 0px;
+    left: 0px;
+    width: 1728px;
+    height: 1117px;
+    object-fit: cover;
+}
+.sign-up {
+    position: relative;
+    font-weight: 500;
+}
+.sign-up-wrapper {
+    position: absolute;
+    top: calc(50% - 17px);
+    left: calc(50% - 51px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    position: absolute;
+    height: calc(100% - 1053px);
+    width: calc(100% - 1200px);
+    top: 817px;
+    right: 600px;
+    bottom: 236px;
+    left: 600px;
+    border-radius: 32px;
+    background-color: #111;
+    overflow: hidden;
+}
+.card-login-child {
+    position: absolute;
+    top: calc(50% - 368.5px);
+    left: calc(50% - 397.5px);
+    border-radius: 24px;
+    background-color: #fff;
+    width: 795px;
+    height: 737px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opsional: tambahkan bayangan */
+}
+.sign-up-container {
+    position: absolute;
+    top: calc(50% - 17px);
+    left: calc(50% - 33px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button-login {
+    position: absolute;
+    height: calc(100% - 673px);
+    width: calc(100% - 267px);
+    top: 527px;
+    right: 133px;
+    bottom: 146px;
+    left: 134px;
+    border-radius: 32px;
+    color: #f5e3b4;
+    background-color: #603f20;
+    overflow: hidden;
+}
+.username1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.username-container {
+    align-self: stretch;
+    position: relative;
+    height: 27px;
+}
+.text-field {
+    align-self: stretch;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid rgba(102, 102, 102, 0.35);
+    box-sizing: border-box;
+    height: 56px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.username {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 528px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.username-wrapper {
+    width: 528px;
+    position: relative;
+    height: 87px;
+}
+.icon {
+    position: absolute;
+    top: 3px;
+    right: 49px;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+}
+.hide {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.password-hide-see {
+    position: absolute;
+    top: 0px;
+    right: 8.86px;
+    width: 73px;
+    height: 27px;
+    text-align: right;
+    font-size: 18px;
+    color: rgba(102, 102, 102, 0.8);
+}
+.password {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.listinputlogin {
+    position: absolute;
+    top: 230px;
+    left: 135px;
+    width: 528px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #666;
+}
+.login1 {
+    position: absolute;
+    top: 67px;
+    left: calc(50% - 84.5px);
+    font-size: 64px;
+    display: inline-block;
+    font-family: Roboto;
+    color: #333;
+    text-align: left;
+    width: 168px;
+    height: 75px;
+}
+.sign-in-to {
+    position: absolute;
+    top: 149px;
+    left: calc(50% - 94.5px);
+    font-size: 18px;
+    font-family: Roboto;
+    color: #4a5568;
+    display: inline-block;
+    width: 189px;
+    height: 22px;
+}
+.card-login {
+    position: absolute;
+    top: calc(50% - 430.5px);
+    left: calc(50% - 397px);
+    width: 795px;
+    height: 737px;
+}
+.login {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 1117px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    font-family: Poppins;
+}
+
+
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+.placeholder {
+    position: relative;
+    font-weight: 500;
+}
+.inputtext {
+    width: 541px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid #dfe3e8;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px 20px;
+}
+.nav-search {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.div {
+    align-self: stretch;
+    position: relative;
+}
+
+.button-login:hover{
+    background-color: #f5e3b4;
+    color: #603f20;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.08);
+    
+}
+
+input:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="/css/login.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+  	
+  	
+  	
+</head>
+<body>
+  	<div class="login">
+    		<img class="login-child" alt="" src="https://s3-alpha-sig.figma.com/img/57fb/eb5e/3ed9d760d2d67277495a682fce629500?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MFhsXVsw6iJS~XgBLVLklvY2UaQT8iXqDB7d0l1fhpXCo6Af~MtzkcsNloXalp6MpttKOOHeIsurmxGqhhgBjdJEKqLCVSfYzGyC79WwmIgPgm9lwcO4pUONVV1OsqIR3xLDvtbT8WzJvQZppTcDM-dhv1oVSuz4F9zdheJz8q7qlAnpnwqAaihX3yOPZR-Cyc3vPtXoLJp58dG1KyA2m7sHarggSOpnZZcWXEbxdJCzygm15WGY7WA29YXWDe~kDKaDIbI22oa77Mn5q3MhjkqABeShiT8DsmBxh8Gj76m8cRb6amA34GQalvKXo2svtu9b8ikQ4Tvqz4sdds28XA__">
+    		<div class="card-login">
+      			<div class="card-login-child">
+      			</div>
+				<form action="<%= url %>login/auth" method="post">
+					<div class="listinputlogin">
+        				<div class="username-wrapper">
+          					<div class="username">
+            						<div class="username-container">
+              							<div class="username1">Username</div>
+            						</div>
+									<input type="text" id="username" name="username" placeholder="Enter your username" class="text-field">
+          					</div>
+        				</div>
+        				<div class="password">
+          					<div class="username-container">
+            						<div class="username1">Password</div>
+          					</div>
+							  <input type="password" id="password" name="password" placeholder="Enter your password" class="text-field">
+        				</div>
+      			</div>
+				  <button class="button-login" type="submit">
+					<div class="sign-up"><b>LOGIN</b></div>
+				</button>
+				<%if (pesanFlash) { %>
+					<div class="alert alert-<%= colorFlash %> alert-dismissible fade show mt-3" role="alert">
+						<strong><%= statusFlash %></strong> 
+						<%= pesanFlash %>
+					</div>
+				<% } %>
+				</form>
+      			<b class="login1">Login</b>
+      			<div class="sign-in-to">Sign in to your account</div>
+    		</div>
+  	</div>
+</body>
+</html>

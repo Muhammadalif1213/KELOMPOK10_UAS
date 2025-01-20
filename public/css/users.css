@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/images/Rectangle_13.png'); /* Ganti dengan URL gambar latar Anda */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: block;
+}
+
+.layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-body {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparansi untuk menjaga konten terlihat */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    margin: 15px;
+    background-color:rgb(96, 64, 32); /* Dark background */
+    color: white;
+}
+
+
+.btn-primary {
+    background-color: #1ba76a;
+    border-color: #1ba76a;
+}
+
+.btn-primary:hover {
+    background-color: #158554;
+    border-color: #158554;
+}
+
+h1 {
+    color: #f5e3b4;
+    font-weight: 600;
+}
+
+table {
+    text-align: center;
+}
+
+table thead {
+    background-color:#f5e3b4;
+    color: #603f20;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #e9f7ef;
+}
+
+.modal-content {
+    border-radius: 10px;
+    margin: 50px;
+}
+
+.btn-close {
+    outline: none;
+}
+
+.button-menu {
+    display: inline-block;
+    background-color:  #603f20;
+    border: 2px solid #f5e3b4;
+    color: #f5e3b4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.button-menu:hover {
+    background-color: #f5e3b4;
+    color: #603f20; /* Warna coklat gelap */
+}
+.text-center {
+    text-align: center; /* Untuk membuat tombol berada di tengah */
+}
+.spacer{
+    padding: 50px;
+}
+
+.wraper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.card{
+    margin: 20px;
+    width: 800px;
+    height: 700px;
+}
+
+.card-perawat{
+    background-color: white;
+    margin: 20px;
+    width: 800px;
+    height: 650px;
+}
+
+.card-periksa{
+    background-color: white;
+    margin: 20px;
+    width: 800px;
+    height: 100%;
+}
+
+.card-button{
+    background-color: white;
+    margin: 20px;
+    width: 800px;
+}

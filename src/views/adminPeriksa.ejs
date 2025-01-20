@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Pemeriksaan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/adminHewan.css">
+    <link rel="stylesheet" href="/css/footerHeader.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header" style="margin-top: 40px;">
+        </div>
+        <ul>
+          <li><a id="toggle-btn"><i class="bi bi-list icon"></i></a>
+            <li><a href="/admin"><i class="fas fa-home icon"></i>Dashboard</a></li>
+            <li><a href="/admin/hewan"><i class="fas fa-paw icon"></i>Data Hewan</a></li>
+            <li><a href="/admin/keeper"><i class="fas fa-user icon"></i>Data Keeper</a></li>
+            <li><a href="/admin/dokter"><i class="fas fa-user-md icon"></i>Data Dokter</a></li>
+            <li class="active"><a href="/admin/pemeriksaan"><i class="fas fa-notes-medical icon"></i>Pemeriksaan</a></li>
+            <li><a href="/admin/perawatan"><i class="fas fa-stethoscope icon"></i>Perawatan</a></li>
+            <li style="bottom: 0;"><a href="<%= baseUrl %>logout"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
+        </ul>
+      </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="<%= baseUrl %>admin">
+                <img src="https://s3-alpha-sig.figma.com/img/e3ca/d447/382e5d90ae084be8858275433073a0ec?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=e9F683Fi69EcIwgMn5AgzGVFLBBCQh-j42tg1tsNe34Hvss4bLmOMyULdzp4pheoOxJxnbTHYtGnazA~HviqKHDzijQnuMxS0dk1FAJp~N~5-88uw6~4FEBrQwGgk92AMuV-5-q6tBRvKdszHroE0Guyy93zLXbEjVe3TRufO7TQPpFBreiIh4xLIQV9ZZ8379rS0-Jv~D2rQlzqQahb-FBehMuf~X66edZ6NtA-vm~K9kMajf1UzU9fB2-omfcwUIwlQbWP1NsgHJ-o-LExPPe5aYgO2QvlnGzTlYopuDKdBRxcv-6FItylknPOYiBCB824tLIqr8WxNpLFDGcTHQ__" alt="logo" style="width: 50px; margin-right: 10px;">
+                <span class="fw-bold">WILDLIFEHEALTH</span>
+            </a>
+            <a class="button-logout" href="<%= baseUrl %>logout">Logout</a>
+        </div>
+    </nav>
+    <footer class=" text-white text-center custom-footer">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 WildlifeHealth. Designed by Kelompok 10.</p>
+        </div>
+    </footer>
+
+
+    <div class="container-body" style="top: 0; margin-left: 70px; margin-right: 70px;">
+        <div class="text-center" style="margin-top: 70px; ">
+            <h1 style="color: #603f20;">Informasi Data Pemeriksaan Hewan</h1>
+        </div>
+        
+    </div>
+
+    <div class="container-body" style="margin-left: 140px; margin-right: 140px; margin-top: 40px;">
+        <div class="card-header text-center">
+            <b>Daftar Pemeriksaan</b>
+        </div>
+        <div class="card-body">
+            <% if (pemeriksaans.length > 0) { %>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID Pemeriksaan</th>
+                            <th>ID Dokter</th>
+                            <th>ID Hewan</th>
+                            <th>Tanggal</th>
+                            <th>Diagnosis</th>
+                            <th>Pengobatan</th>
+                            <th>Saran</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% pemeriksaans.forEach(function(pemeriksaan) { %>
+                            <tr>
+                                <td><%= pemeriksaan.Id_periksa %></td>
+                                <td><%= pemeriksaan.Id_Dhewan %></td>
+                                <td><%= pemeriksaan.Id_hewan %></td>
+                                <td class="date"><%= pemeriksaan.Tgl_periksa %></td>
+                                <td><%= pemeriksaan.Diagnosis %></td>
+                                <td><%= pemeriksaan.Pengobatan %></td>
+                                <td><%= pemeriksaan.Saran %></td>
+                                <td>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editDataModal<%= pemeriksaan.Id_periksa %>">Edit</button>
+                                    <a href="<%= baseUrl + 'admin/pemeriksaan/delete/' + pemeriksaan.Id_periksa %>" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p class="text-center">No Data</p>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="container-body" style="margin-left: 140px; margin-right: 140px; margin-top: 15px;">
+        <div class="container mt-4">
+            <div class="card-header">
+                <h1 class="text-center"><b>Tambah Data Pemeriksaan Hewan</b></h1>
+            </div>
+            <form action="<%= baseUrl + 'admin/pemeriksaan/save' %>" method="POST">
+                <div class="mb-3">
+                    <label for="Id_periksa" class="form-label">ID Pemeriksaan</label>
+                    <input type="text" class="form-control" id="Id_periksa" name="Id_periksa" value="<%= newId %>" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="Id_Dhewan" class="form-label">ID Dokter</label>
+                    <input type="text" class="form-control" id="Id_Dhewan" name="Id_Dhewan" placeholder="Masukkan ID Dokter" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Id_hewan" class="form-label">ID Hewan</label>
+                    <input type="text" class="form-control" id="Id_hewan" name="Id_hewan" placeholder="Masukkan ID Hewan" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Tgl_periksa" class="form-label">Tanggal</label>
+                    <input type="date" class="form-control" id="Tgl_periksa" name="Tgl_periksa" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="Diagnosis" class="form-label">Diagnosis</label>
+                    <input type="text" class="form-control" id="Diagnosis" name="Diagnosis" placeholder="Masukkan Diagnosis" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Pengobatan" class="form-label">Pengobatan</label>
+                    <input type="text" class="form-control" id="Pengobatan" name="Pengobatan" placeholder="Masukkan Pengobatan" required>
+                </div>
+                <div class="mb-3">
+                    <label for="Saran" class="form-label">Saran</label>
+                    <input type="text" class="form-control" id="Saran" name="Saran" placeholder="Masukkan Saran" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="button-menu">Simpan</button>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+
+    <div class="spacer">
+    </div>
+     
+
+    <!-- Modal Edit Data -->
+    <% pemeriksaans.forEach(function(pemeriksaan) { %>
+    <div class="modal fade" id="editDataModal<%= pemeriksaan.Id_periksa %>" tabindex="-1" aria-labelledby="editModalLabel<%= pemeriksaan.Id_periksa %>" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel<%= pemeriksaan.Id_periksa %>"><b>Edit Pemeriksaan</b></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<%= baseUrl + 'admin/pemeriksaan/update/' + pemeriksaan.Id_periksa %>" method="POST">
+                        <input type="hidden" name="Id_periksa" value="<%= pemeriksaan.Id_periksa %>">
+                        <div class="mb-3">
+                            <label for="Id_Dhewan" class="form-label">ID Dokter</label>
+                            <input type="text" class="form-control" id="Id_Dhewan" name="Id_Dhewan" value="<%= pemeriksaan.Id_Dhewan %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Id_hewan" class="form-label">ID Hewan</label>
+                            <input type="text" class="form-control" id="Id_hewan" name="Id_hewan" value="<%= pemeriksaan.Id_hewan %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Diagnosis" class="form-label">Diagnosis</label>
+                            <input type="text" class="form-control" id="Diagnosis" name="Diagnosis" value="<%= pemeriksaan.Diagnosis %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Pengobatan" class="form-label">Pengobatan</label>
+                            <input type="text" class="form-control" id="Pengobatan" name="Pengobatan" value="<%= pemeriksaan.Pengobatan %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Saran" class="form-label">Saran</label>
+                            <input type="text" class="form-control" id="Saran" name="Saran" value="<%= pemeriksaan.Saran %>" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+</div>
+
+<script>
+    function deleteData(id) {
+        if (confirm("Are you sure you want to delete this record?")) {
+            $.post('<%= baseUrl + "dokter/delete" %>', { Id_periksa: id }, function (response) {
+                location.reload();
+            });
+        }
+    }
+    document.querySelectorAll('td.date').forEach(cell => {
+    const originalDate = cell.innerText; // Ambil nilai tanggal asli
+    const date = new Date(originalDate); // Ubah ke format Date
+    const options = { day: '2-digit', month: 'long', year: 'numeric' };
+    cell.innerText = date.toLocaleDateString('id-ID', options); // Format ulang tanggal
+    });
+
+    const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        const toggleBtn = document.getElementById('toggle-btn');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+            toggleBtn.classList.toggle('collapsed');
+        });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+<script>
+    // Menetapkan tanggal saat ini pada input tanggal, namun input tetap readonly
+    document.getElementById('Tgl_periksa').value = new Date().toISOString().slice(0, 10);
+</script>
+</body>
+
+</html>
